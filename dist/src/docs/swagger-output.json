@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Express.js REST API Documentation with Swagger",
+        "version": "0.1.0",
+        "description": "This is a simple REST API documentation build with Express.js and Swagger",
+        "license": {
+            "name": "MIT"
+        },
+        "contact": {
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "url": "https://johndoe.example.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8888",
+            "description": "Development Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Authentication"
+        },
+        {
+            "name": "Home"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/register": {
+            "post": {
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "fullName": {
+                                        "example": "any"
+                                    },
+                                    "email": {
+                                        "example": "any"
+                                    },
+                                    "password": {
+                                        "example": "any"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/login": {
+            "post": {
+                "description": "",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "example": "any"
+                                    },
+                                    "password": {
+                                        "example": "any"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/logout": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
